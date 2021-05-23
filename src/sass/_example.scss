@@ -11,7 +11,8 @@ body{
     'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   color: #424242;
-text-align: center;
+text-align: left;
+
 }
 
 .input {
@@ -28,10 +29,13 @@ height: 40px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.listCountries{
+li{
   font-size: 20px;
   font-weight: 700;
   text-align: left;
+  list-style-type: none
 }
-
+.card__content{
+  display: flex;
+}
 
