@@ -3,14 +3,16 @@ import './sass/main.scss';
 import '@pnotify/core/dist/BrightTheme.css';
 import { alert } from '@pnotify/core';
 
-
+const debounce = require('lodash.debounce');
 const oneContry = document.querySelector('.js-country')
 
 const searchBox = document.querySelector('.input');
 const listCountries = document.querySelector('.listCountries')
-searchBox.addEventListener('input', dataRetrievalInputSearchBox);
+searchBox.addEventListener('input', debounce(dataRetrievalInputSearchBox,
+ 1000));
 function dataRetrievalInputSearchBox(event) {
-  const nameCountry = event.currentTarget.value;
+  const nameCountry =  event.target.value
+
   const url = ` https://restcountries.eu/rest/v2/name/${nameCountry}`;
   fetch(url)
     .then(res => {
